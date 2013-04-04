@@ -19,16 +19,16 @@ public class Scrapper {
 			
 			//*[@id="overview-top"]/h1/span[1]
 			Node title = doc.select("#overview-top h1").first().getElementsByTag("span").first().childNode(0);
-			System.out.println(((TextNode)title).text());
+			System.out.print(((TextNode)title).text()+"\t");
 			
 			//*[@id="overview-top"]/div[3]/div[3]/strong/span
 			Elements contents = doc.select(".star-box,.giga-star");
 			Node rating = contents.first().child(2).getElementsByTag("strong").first().getElementsByTag("span").first().childNode(0);
-			System.out.println(((TextNode)rating).text());
+			System.out.print(((TextNode)rating).text()+"\t");
 			
 			//*[@id="overview-top"]/div[4]/a/span
 			Node director = doc.select("#overview-top").first().getElementsByAttributeValue("itemprop", "director").first().getElementsByTag("a").first().getElementsByTag("span").first().childNode(0);
-			System.out.println(((TextNode)director).text());
+			System.out.println(((TextNode)director).text()+"\n");
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
